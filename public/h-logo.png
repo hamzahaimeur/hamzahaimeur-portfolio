@@ -1,0 +1,78 @@
+I'm building a professional portfolio website for a front-end developer named Hamza using:
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- No backend needed — this is a static personal portfolio
+
+BRAND IDENTITY:
+I will attach an image of my logo — a minimalist serif letter "H" in a warm gold/cream color on a deep black background, with a subtle glowing effect and elegant thin serifs. This logo image is the ONLY logo asset to use in the site (place it in the navbar and favicon). 
+
+Color palette (based on my brand): 
+- Primary background: deep black / near-black (#0a0a0a or similar)
+- Accent color: warm gold / champagne (like #d4af37 or a soft cream-gold, matching the logo)
+- Text: off-white / cream for dark mode, deep charcoal for light mode
+- Keep the palette minimal and premium — black + gold + white/cream only, no other competing colors
+- Add one more subtle complementary accent color of your choice (something like a warm bronze or muted amber) to use sparingly for depth, as long as it stays cohesive with the black/gold luxury aesthetic
+
+DARK / LIGHT MODE:
+- Full dark/light mode toggle
+- Dark mode: black background, gold accents, cream text (matches the logo perfectly)
+- Light mode: off-white/cream background, the same gold accent color, dark charcoal text, with the logo shown in a version that still reads well on a light background (add a subtle dark outline/contrast treatment behind the logo if needed)
+
+NAVBAR:
+- Top-left: the logo image (the "H" mark) followed by the text "HAMZA" in a clean, elegant, spaced-out uppercase font (letter-spacing wide, like the style in a luxury brand wordmark) — do NOT show the full last name, just "HAMZA"
+- Nav links: Home, Projects, Skills, About, Contact
+- A dark/light mode toggle button on the right
+- On scroll, navbar becomes slightly more opaque/blurred (backdrop-blur) with a subtle shadow
+
+Now build ONLY the Homepage with these sections:
+
+1. Hero Section:
+   - Large, elegant headline introducing Hamza as a Front-End Developer (e.g. "Building clean, modern web experiences" or similar — feel free to write compelling copy)
+   - Short subtext: passionate front-end developer specializing in React, Next.js, and TypeScript, building fast and polished web applications
+   - Two CTA buttons: "View Projects" (primary, gold) and "Contact Me" (secondary, outlined)
+   - Subtle animated background: soft glowing gold particles, gradient mesh, or a very subtle geometric pattern — elegant and not distracting
+   - The logo "H" mark can appear large and subtle in the background (low opacity, like a watermark) for a premium branded feel
+
+2. Featured Skills / Tech Stack Section:
+   - Section title "Tech Stack" or "What I Work With"
+   - A grid of tech icons/cards: React, Next.js, TypeScript, Tailwind CSS, JavaScript, HTML5, CSS3, Git — each with icon + name
+   - Cards should have a subtle gold border glow on hover
+
+3. Featured Projects Preview Section:
+   - Section title "Featured Work"
+   - A grid of 3 project preview cards (use these real projects as placeholders, I'll refine details later): 
+     - "Velora" — a premium halal restaurant website
+     - "Nova Dashboard" — a React/TypeScript admin dashboard template
+     - "Amana Store" — a Next.js e-commerce store template
+   - Each card: project image/thumbnail placeholder, project name, short one-line description, tech tags, "View Project" link
+   - "View All Projects" button below the grid
+
+4. Stats/Highlights Section:
+   - 3-4 simple stats or highlights (e.g., "X+ Projects Completed", "React & Next.js Specialist", "Pixel-Perfect UI", etc.) — use your judgment for realistic, professional wording for a developer with about a year of hands-on front-end experience, focused on quality over inflated numbers
+
+5. Footer:
+   - Logo + "HAMZA" wordmark
+   - Short tagline
+   - Quick links (Home, Projects, Skills, About, Contact)
+   - Social/contact icons (GitHub, LinkedIn, Email — use placeholder links)
+   - Copyright line
+
+POLISH & INTERACTIONS (apply across the whole homepage):
+- Smooth fade-in / slide-up animations for each section as it scrolls into view
+- Elegant hover states: project cards lift slightly with a soft gold-tinted shadow, buttons have smooth scale/color transitions, nav links get a gold underline or glow on hover
+- Smooth scroll behavior for in-page nav links
+- Custom-styled scrollbar (thin, rounded, gold-tinted, matching the palette — not the default browser scrollbar)
+- Custom text selection color (::selection) using the gold accent instead of default blue
+- All transitions consistent: ease-in-out, 200-400ms duration
+
+Design requirements:
+- Premium, minimal, editorial aesthetic — think luxury brand website, not a generic developer template
+- Fully responsive (mobile-first)
+- Use Tailwind CSS, lucide-react for icons
+- Clean component structure (components/home/Navbar.tsx, Hero.tsx, TechStack.tsx, FeaturedProjects.tsx, Stats.tsx, Footer.tsx)
+- TypeScript throughout
+
+I will upload the logo image ("H" mark) along with this prompt — please use it exactly as provided in the navbar and hero background, do not generate a new logo.
+
+Generate the full homepage only. We'll build Projects, Skills, About, and Contact pages one by one after this.
