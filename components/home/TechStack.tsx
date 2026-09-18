@@ -8,7 +8,6 @@ export function TechStack() {
     { name: 'Tailwind CSS', icon: 'TW' },
     { name: 'Figma', icon: 'F' },
     { name: 'Node.js', icon: 'JS' },
-    { name: 'PostgreSQL', icon: 'PG' },
     { name: 'Vercel', icon: 'V' },
   ]
 

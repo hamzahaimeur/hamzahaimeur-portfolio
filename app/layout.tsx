@@ -3,12 +3,12 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'HAMZA HAIMEUR — Front End Developer',
-  description: 'Premium portfolio showcasing design and development work. Crafted with care and precision.',
+  title: 'Hamza Haimeur | Front-end Developer',
+  description: 'Front-end developer who builds clean, professional projects for the web.',
   generator: 'v0.app',
   openGraph: {
-    title: 'HAMZA HAIMEUR',
-    description: 'Front End Developer',
+    title: 'Hamza Haimeur | Front-end Developer',
+    description: 'Front-end developer who builds clean, professional projects for the web.',
     images: [
       {
         url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/H-PVM8LfELQ7zPFB2NEV5gzlb036Km00.png',

@@ -9,7 +9,7 @@ const services = [
   {
     icon: Code2,
     title: 'Front-end builds',
-    description: 'Fast, accessible experiences built with modern tools.',
+    description: 'Fast, accessible experiences built with professional front-end tools.',
   },
   {
     icon: Sparkles,

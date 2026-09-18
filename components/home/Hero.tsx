@@ -38,7 +38,7 @@ export function Hero() {
           </p>
           
           <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto text-balance leading-relaxed">
-            I craft digital experiences that are beautiful, intentional, and built to last. Specializing in design systems, web applications, and thoughtful interfaces.
+            I am a front-end developer who builds professional websites with AI, combining clean interfaces with practical, accessible user experiences.
           </p>
         </div>
 

@@ -25,9 +25,9 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'Nova Dashboard',
-    description: 'A modern, responsive admin dashboard template built with React, TypeScript, and Tailwind CSS for SaaS products and internal tools.',
+    description: 'A clean, professional admin dashboard template built with React, TypeScript, and Tailwind CSS for SaaS products and internal tools.',
     tech: ['React', 'TypeScript', 'Tailwind CSS'],
-    url: '/projects',
+    url: 'https://nova-dashboard-brown.vercel.app',
     color: 'from-secondary to-secondary/60',
     icon: ArrowUpRight,
   },
@@ -42,6 +42,15 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: 'hdev-portfolio',
+    description: 'A clean professional portfolio website built with HTML, CSS, and JS.',
+    tech: ['HTML', 'CSS', 'JS'],
+    url: 'https://hdev-portfolio1.vercel.app',
+    color: 'from-secondary to-accent',
+    icon: ArrowUpRight,
+  },
+  {
+    id: 5,
     title: 'Diyar',
     description: 'A professional real estate listing platform built with Next.js, TypeScript, and Tailwind CSS. Currently in progress.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
@@ -57,8 +66,8 @@ export const projectFilters = ['All', 'Landing Page', 'Dashboard', 'E-commerce',
 export type ProjectFilter = (typeof projectFilters)[number]
 
 export const projectFilterMap: Record<ProjectFilter, string[]> = {
-  All: ['Velora', 'Nova Dashboard', 'Amana Store', 'Diyar'],
-  'Landing Page': ['Velora'],
+  All: ['Velora', 'Nova Dashboard', 'Amana Store', 'hdev-portfolio', 'Diyar'],
+  'Landing Page': ['Velora', 'hdev-portfolio'],
   Dashboard: ['Nova Dashboard'],
   'E-commerce': ['Amana Store'],
   'In Progress': ['Diyar'],

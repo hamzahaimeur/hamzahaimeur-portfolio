@@ -70,11 +70,21 @@ export function Navbar() {
       {isOpen && (
         <div className="border-b border-border bg-background px-6 pb-5 pt-2 shadow-lg md:hidden">
           <div className="space-y-1">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} onClick={closeMenu} className="block rounded-md px-3 py-3 text-sm font-medium text-foreground/75 hover:bg-muted hover:text-foreground">
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = (isHomePage && link.id === 'home') || (isProjectsPage && link.id === 'work') || (isSkillsPage && link.id === 'skills') || (isHomePage && link.id !== 'home' && activeSection === link.id)
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block rounded-md px-3 py-3 text-sm font-medium transition-colors ${active ? 'bg-accent/10 text-accent' : 'text-foreground/75 hover:bg-muted hover:text-foreground'}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
             <a href="/#contact" onClick={closeMenu} className="flex items-center gap-2 rounded-md px-3 py-3 text-sm font-medium text-accent"><Mail size={15} /> Get In Touch</a>
             <a href="/cv.pdf" download className="flex items-center gap-2 rounded-md px-3 py-3 text-sm font-medium text-foreground/75"><Download size={15} /> Download CV</a>
           </div>
