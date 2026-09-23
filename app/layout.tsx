@@ -11,9 +11,9 @@ export const metadata: Metadata = {
     description: 'Front-end developer who builds clean, professional projects for the web.',
     images: [
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/H-PVM8LfELQ7zPFB2NEV5gzlb036Km00.png',
-        width: 1200,
-        height: 1200,
+        url: '/preview.png',
+        width: 1366,
+        height: 641,
         alt: 'HAMZA HAIMEUR Portfolio',
       },
     ],
