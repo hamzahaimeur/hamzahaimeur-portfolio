@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/H-PVM8LfELQ7zPFB2NEV5gzlb036Km00.png',
-    apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/H-PVM8LfELQ7zPFB2NEV5gzlb036Km00.png',
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
   },
 }
 

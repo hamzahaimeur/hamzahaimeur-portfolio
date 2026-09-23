@@ -6,9 +6,9 @@ import { ArrowLeft, ArrowUpRight, Home } from 'lucide-react'
 import { Navbar } from '@/components/home/Navbar'
 import { Footer } from '@/components/home/Footer'
 import { BackToTop } from '@/components/home/BackToTop'
-import { FilterBar, type ProjectFilter } from '@/components/projects/FilterBar'
+import { FilterBar } from '@/components/projects/FilterBar'
 import { ProjectCard } from '@/components/projects/ProjectCard'
-import { projectFilters, projectFilterMap, projects } from '@/components/projects/project-data'
+import { projectFilters, projectFilterMap, projects, type ProjectFilter } from '@/components/projects/project-data'
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All')
@@ -38,14 +38,14 @@ export default function ProjectsPage() {
           </div>
           <FilterBar active={activeFilter} onChange={setActiveFilter} filters={projectFilters} />
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
-            {isLoading ? Array.from({ length: 4 }).map((_, index) => <div key={index} className="min-h-[360px] animate-pulse rounded-xl border border-border bg-card/60" />) : filteredProjects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
+            {isLoading ? Array.from({ length: 4 }).map((_, index) => <div key={index} className="min-h-[420px] animate-pulse rounded-xl border border-border bg-card/60" />) : filteredProjects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
           </div>
         </div>
       </section>
       <section className="section-spacing pt-4">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 rounded-xl border border-accent/25 bg-accent/10 p-8 sm:flex-row sm:items-center sm:p-10">
           <div><p className="prose-label mb-2 text-accent">Let&apos;s create</p><h2 className="font-serif text-3xl sm:text-4xl">Have a project in mind?</h2><p className="mt-2 text-sm text-foreground/60">Let&apos;s turn the next good idea into something people love to use.</p></div>
-          <a href="mailto:hello@hamza.design" className="inline-flex shrink-0 items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20">Let&apos;s Talk <ArrowUpRight size={17} /></a>
+          <Link href="/contact" className="inline-flex shrink-0 items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20">Let&apos;s Talk <ArrowUpRight size={17} /></Link>
         </div>
       </section>
       <Footer />
