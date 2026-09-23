@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description: 'A premium halal restaurant website built with HTML, CSS, and JavaScript, focused on elegant presentation and smooth user experience.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     url: 'https://velora-ui.vercel.app',
-    image: '/projects/velora.png',
+    image: '/velora.png',
     color: 'from-accent to-accent/60',
   },
   {
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: 'A clean, professional admin dashboard template built with React, TypeScript, and Tailwind CSS for SaaS products and internal tools.',
     tech: ['React', 'TypeScript', 'Tailwind CSS'],
     url: 'https://nova-dashboard-brown.vercel.app',
-    image: '/projects/nova-dashboard.png',
+    image: '/nova-dashboard.png',
     color: 'from-secondary to-secondary/60',
   },
   {
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     description: 'A complete e-commerce storefront template built with Next.js, React, and TypeScript, featuring products, cart functionality, and checkout flow.',
     tech: ['Next.js', 'React', 'TypeScript'],
     url: 'https://amana-store.vercel.app',
-    image: '/projects/amana-store.png',
+    image: '/amana-store.png',
     color: 'from-accent to-secondary',
   },
   {
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     description: 'A professional real estate listing website built with Next.js, TypeScript, and Tailwind CSS, featuring property search, filters, saved listings, and detail pages.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     url: 'https://diyar-real-estate1.vercel.app/',
-    image: '/projects/diyar.png',
+    image: '/diyar-real-estate.png',
     color: 'from-secondary to-accent',
   },
 ]

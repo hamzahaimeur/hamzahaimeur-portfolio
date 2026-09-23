@@ -22,36 +22,18 @@ export default function ContactPage() {
     setStatus('sending')
     setErrorMessage('')
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-    if (!serviceId || !templateId || !publicKey) {
-      setStatus('error')
-      setErrorMessage('Email delivery is not configured yet.')
-      return
-    }
-
     try {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          service_id: serviceId,
-          template_id: templateId,
-          user_id: publicKey,
-          template_params: {
-            name: form.name,
-            email: form.email,
-            subject: form.subject,
-            message: form.message,
-          },
-        }),
+        body: JSON.stringify(form),
       })
+
+      const data = await response.json().catch(() => null)
 
       if (!response.ok) {
         setStatus('error')
-        setErrorMessage('Unable to send your message right now. Please try again.')
+        setErrorMessage(data?.error || 'Unable to send your message right now. Please try again.')
         return
       }
 
