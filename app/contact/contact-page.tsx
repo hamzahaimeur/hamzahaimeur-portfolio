@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight, CheckCircle2, Loader2 } from 'lucide-react'
 import { Navbar } from '@/components/home/Navbar'
 import { Footer } from '@/components/home/Footer'
 
-const initialForm = { name: '', email: '', subject: '', message: '' }
+const initialForm = { name: '', email: '', subject: '', message: '', company: '' }
 
 export default function ContactPage() {
   const [form, setForm] = useState(initialForm)
@@ -63,6 +63,20 @@ export default function ContactPage() {
             </div>
 
             <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card/40 p-6 shadow-sm sm:p-8">
+              {/* Honeypot field — hidden from real visitors, bots often fill it in.
+                  Kept off-screen rather than display:none, which some bots skip. */}
+              <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden">
+                <label htmlFor="company">Company</label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.company}
+                  onChange={(event) => updateField('company', event.target.value)}
+                />
+              </div>
               <div className="grid gap-6 sm:grid-cols-2">
                 <label className="grid gap-2 text-sm font-medium">
                   Name

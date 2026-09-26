@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description: 'A clean professional portfolio website built with HTML, CSS, and JS.',
     tech: ['HTML', 'CSS', 'JS'],
     url: 'https://hdev-portfolio1.vercel.app',
-    image: '/projects/hdev-portfolio.png',
+    image: '/hdev-portfolio.png',
     color: 'from-secondary to-accent',
   },
   {

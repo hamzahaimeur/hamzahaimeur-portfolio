@@ -6,8 +6,47 @@ function clean(value: unknown, maxLength: number) {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : ''
 }
 
+// Best-effort in-memory rate limit: max 3 submissions per IP per 10 minutes.
+// This resets when the serverless function cold-starts, so it's a deterrent
+// against quick repeated spam, not a hard guarantee — fine for a portfolio site.
+const WINDOW_MS = 10 * 60 * 1000
+const MAX_PER_WINDOW = 3
+const submissions = new Map<string, number[]>()
+
+function isRateLimited(ip: string) {
+  const now = Date.now()
+  const timestamps = (submissions.get(ip) ?? []).filter((time) => now - time < WINDOW_MS)
+  if (timestamps.length >= MAX_PER_WINDOW) {
+    submissions.set(ip, timestamps)
+    return true
+  }
+  timestamps.push(now)
+  submissions.set(ip, timestamps)
+  return false
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null)
+
+  // Honeypot: a hidden field real visitors never fill in. If it has a value,
+  // silently pretend success so the bot moves on, without sending an email.
+  const honeypot = clean(body?.company, 200)
+  if (honeypot) {
+    return Response.json({ ok: true })
+  }
+
+  const ip =
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    request.headers.get('x-real-ip') ||
+    'unknown'
+
+  if (isRateLimited(ip)) {
+    return Response.json(
+      { error: 'Too many messages sent recently. Please try again in a few minutes.' },
+      { status: 429 },
+    )
+  }
+
   const name = clean(body?.name, 120)
   const email = clean(body?.email, 254)
   const subject = clean(body?.subject, 160)

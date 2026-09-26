@@ -35,7 +35,7 @@ export function ProjectImage({ src, title, url, color }: ProjectImageProps) {
         </span>
       </div>
 
-      <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+      <div className="relative aspect-[1366/641] w-full overflow-hidden bg-muted">
         {failed ? (
           <div className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br ${color}`}>
             <span className="font-serif text-4xl text-foreground/40">{title}</span>
@@ -46,7 +46,7 @@ export function ProjectImage({ src, title, url, color }: ProjectImageProps) {
             alt={`${title} website preview`}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             onError={() => setFailed(true)}
           />
         )}
